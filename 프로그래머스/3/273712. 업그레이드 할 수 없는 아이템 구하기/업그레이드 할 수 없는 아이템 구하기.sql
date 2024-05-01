@@ -1,0 +1,18 @@
+SELECT I.ITEM_ID, I.ITEM_NAME, I.RARITY
+FROM ITEM_INFO I
+WHERE I.ITEM_ID NOT IN (
+                        SELECT DISTINCT(PARENT_ITEM_ID)
+                        FROM ITEM_TREE
+                        WHERE PARENT_ITEM_ID IS NOT NULL
+                        )
+ORDER BY I.ITEM_ID DESC
+ 
+
+# SELECT *
+# FROM ITEM_INFO
+# WHERE ITEM_ID NOT IN 
+# (SELECT DISTINCT(PARENT_ITEM_ID)
+# FROM ITEM_TREE
+# WHERE PARENT_ITEM_ID IS NOT NULL)
+-- ITEM_ID가 다른 데이터에서 PARENT_ITEM_ID로 쓰인다면 기각
+-- 다른 데이터에서 쓰이는게 없다면 선택
