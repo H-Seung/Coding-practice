@@ -1,0 +1,10 @@
+import pandas as pd
+a = pd.read_csv("data/fb.csv")
+
+# print(a.head())
+# print(a.info())
+cond = (a['loves']+a['wows'])/a['reactions']
+print(len(a[(cond>0.4) & (cond<0.5) & (a['type']=='video')]))
+
+# 답안 제출 예시
+# print(평균변수값)
