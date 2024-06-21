@@ -1,0 +1,15 @@
+import pandas as pd
+import numpy as np
+a = pd.read_csv("data/basic1.csv")
+
+# print(a.head())
+# print(a.info())
+q3 = a.age.quantile(0.75)
+q1 = a.age.quantile(0.25)
+# print("q3:",q3, "q1",q1)
+print(int(np.abs(q3-q1)))
+
+
+# 답안 제출 예시
+# print(평균변수값)
+
