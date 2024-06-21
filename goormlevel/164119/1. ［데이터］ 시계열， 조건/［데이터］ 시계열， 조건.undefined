@@ -1,0 +1,12 @@
+# 데이터 파일 읽기 예제
+import pandas as pd
+a = pd.read_csv("data/nf.csv")
+
+a.date_added = pd.to_datetime(a.date_added)
+# print(a.T)
+# print(a.info())
+cond = (a.date_added.dt.year == 2018) & (a.date_added.dt.month == 1) & (a.country == 'United Kingdom')
+print(len(a[cond]))
+
+# 답안 제출 예시
+# print(평균변수값)
