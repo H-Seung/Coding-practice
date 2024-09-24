@@ -1,7 +1,7 @@
 def solution(wallpaper):
     
-    lux = float('inf')   
-    luy = float('inf')  
+    lux = len(wallpaper)
+    luy = len(wallpaper[0])
     rdx = 0              
     rdy = 0            
        
@@ -17,6 +17,5 @@ def solution(wallpaper):
             rdy = max(rdy, ix_r)
         print(lux, luy, rdx+1, rdy+1)
         i += 1
-    print("final: ", lux, luy, rdx+1, rdy+1)
     
     return lux, luy, rdx+1, rdy+1
